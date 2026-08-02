@@ -1,0 +1,66 @@
+[
+  {
+    "id": "limpieza-hogar",
+    "title": "Guía Práctica de Limpieza Energética",
+    "description": "Purifica tu espacio sagrado paso a paso.",
+    "category": "Fase 1: Limpieza",
+    "fileName": "Guia-Practica-de-Limpieza-Energetica-para-el-Hogar.pdf",
+    "estimatedReadTime": "10 min"
+  },
+  {
+    "id": "proteccion",
+    "title": "Guía Práctica de Protección Espiritual",
+    "description": "Aprende a blindar tu energía en el entorno latinoamericano.",
+    "category": "Fase 1: Limpieza",
+    "fileName": "Guia-Practica-de-Proteccion-Espiritual-en-Latinoamerica.pdf",
+    "estimatedReadTime": "15 min"
+  },
+  {
+    "id": "liberacion",
+    "title": "Liberación Guía",
+    "description": "Libérate de patrones ancestrales de limitación.",
+    "category": "Fase 1: Limpieza",
+    "fileName": "Liberacion-Guia-para-Trascender-la-Escasez-Heredada.pdf",
+    "estimatedReadTime": "20 min"
+  },
+  {
+    "id": "viaje-7-dias",
+    "title": "Guía de Prosperidad: Tu Viaje de 7 Días",
+    "description": "Un recorrido inmersivo hacia tu verdadera esencia abundante.",
+    "category": "Fase 2: Activación",
+    "fileName": "Guia-de-Prosperidad-Tu-Viaje-de-7-Dias-hacia-el-Despertar-Espiritual.pdf",
+    "estimatedReadTime": "35 min"
+  },
+  {
+    "id": "alineacion-7-noches",
+    "title": "Guía de 7 Noches de Alineación Energética",
+    "description": "Sintoniza tu vibración mientras duermes.",
+    "category": "Fase 2: Activación",
+    "fileName": "Guia-de-7-Noches-Alineacion-Energetica-y-Abundancia.pdf",
+    "estimatedReadTime": "25 min"
+  },
+  {
+    "id": "ritual-diario",
+    "title": "Ritual Diario de 5 Minutos",
+    "description": "Abre tu canal de prosperidad todos los días.",
+    "category": "Fase 3: Rituales",
+    "fileName": "Ritual-Diario-5-Minutos-para-Abrir-tu-Canal-de-Prosperidad.pdf",
+    "estimatedReadTime": "5 min"
+  },
+  {
+    "id": "luna-nueva",
+    "title": "Rituales de Luna Nueva",
+    "description": "Tu guía mensual para sembrar intenciones poderosas.",
+    "category": "Fase 3: Rituales",
+    "fileName": "Rituales-de-Luna-Nueva-Tu-Guia-Mensual-para-Sembrar-Intenciones.pdf",
+    "estimatedReadTime": "18 min"
+  },
+  {
+    "id": "calendario",
+    "title": "Calendario Espiritual 2026",
+    "description": "Tu ruta estratégica y mística hacia la prosperidad este año.",
+    "category": "Fase 3: Rituales",
+    "fileName": "Calendario-Espiritual-2026-Tu-Ruta-hacia-la-Prosperidad.pdf",
+    "estimatedReadTime": "12 min"
+  }
+]
