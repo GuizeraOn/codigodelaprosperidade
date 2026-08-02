@@ -7,9 +7,11 @@ import { usePdfStore } from '@/store/pdfStore';
 import mockPdfs from '@/data/mockPdfs.json';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles, Flame, Moon, BookOpen, Star, Smartphone, DownloadCloud } from 'lucide-react';
+import PwaInstallTutorial from '@/components/features/PwaInstallTutorial';
 
 export default function Dashboard({ email }) {
   const [greeting, setGreeting] = useState('');
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const emailPrefix = email ? email.split('@')[0] : 'Buscador';
   
   const { lastReadPdfId, setLastReadPdf, pdfProgress } = usePdfStore();
@@ -32,8 +34,7 @@ export default function Dashboard({ email }) {
   };
 
   const handleInstallClick = () => {
-    // Hooks into global PWA install prompt. For now, alerts or triggers state.
-    alert("Iniciando instalação da App Nativa VIP...");
+    setIsInstallModalOpen(true);
   };
 
   return (
@@ -223,6 +224,11 @@ export default function Dashboard({ email }) {
           </div>
         </div>
       </motion.div>
+
+      <PwaInstallTutorial 
+        isOpen={isInstallModalOpen} 
+        onClose={() => setIsInstallModalOpen(false)} 
+      />
     </div>
   );
 }
