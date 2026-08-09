@@ -6,6 +6,7 @@ import ElCodigo from './pages/ElCodigo';
 import Lector from './pages/Lector';
 import Materiales from './pages/Materiales';
 import Perfil from './pages/Perfil';
+import AudioPlayerScreen from './pages/AudioPlayerScreen';
 import BottomNav from './components/layout/BottomNav';
 import PwaInstallModal from './components/layout/PwaInstallModal';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -40,6 +41,7 @@ export default function App() {
                 <Routes>
                   <Route path="/" element={<Dashboard email={userEmail} />} />
                   <Route path="/codigo" element={<ElCodigo />} />
+                  <Route path="/audio/:phaseId" element={<AudioPlayerScreen />} />
                   <Route path="/materiales" element={<Materiales />} />
                   <Route path="/lector" element={<Lector />} />
                   <Route path="/perfil" element={<Perfil />} />
