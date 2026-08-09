@@ -6,13 +6,16 @@ import { usePdfStore } from '@/store/pdfStore';
 import { useProsperityProgress } from '@/hooks/useProsperityProgress';
 import mockPdfs from '@/data/mockPdfs.json';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Sparkles, Flame, Moon, BookOpen, Star, Smartphone, DownloadCloud, Lock, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Flame, Moon, BookOpen, Star, Smartphone, DownloadCloud, Lock, CheckCircle2, X } from 'lucide-react';
 import PwaInstallTutorial from '@/components/features/PwaInstallTutorial';
 
 export default function Dashboard({ email }) {
   const [greeting, setGreeting] = useState('');
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const [isStandalone, setIsStandalone] = useState(true);
+  const [showInstallBanner, setShowInstallBanner] = useState(() => {
+    return localStorage.getItem('dismissed_install_banner') !== 'true';
+  });
   
   const emailPrefix = email ? email.split('@')[0] : 'Buscador';
   
@@ -42,6 +45,11 @@ export default function Dashboard({ email }) {
 
   const handleInstallClick = () => {
     setIsInstallModalOpen(true);
+  };
+
+  const handleDismissBanner = () => {
+    setShowInstallBanner(false);
+    localStorage.setItem('dismissed_install_banner', 'true');
   };
 
   const getPhaseStatusIcon = (phaseNum) => {
@@ -92,16 +100,25 @@ export default function Dashboard({ email }) {
         )}
       </motion.div>
 
-      {/* 2. VIP PWA Install Banner (Hidden if standalone) */}
-      {!isStandalone && (
+      {/* 2. VIP PWA Install Banner (Hidden if standalone or dismissed) */}
+      {!isStandalone && showInstallBanner && (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.05 }}
           className="relative z-10"
         >
-          <Card className="bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/30 shadow-[0_0_20px_-5px_var(--color-primary)] overflow-hidden">
-            <CardContent className="p-4 flex items-center justify-between gap-3">
+          <Card className="bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/30 shadow-[0_0_20px_-5px_var(--color-primary)] overflow-hidden relative pr-2">
+            
+            {/* Close Button */}
+            <button 
+              onClick={handleDismissBanner}
+              className="absolute top-2 right-2 text-primary/50 hover:text-primary transition-colors z-20"
+            >
+              <X size={14} />
+            </button>
+
+            <CardContent className="p-4 pt-5 pb-4 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
                   <Smartphone size={20} className="text-primary" />
